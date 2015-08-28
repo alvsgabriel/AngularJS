@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrlApp">
+        <h1>{{nome}} - {{idade}}, {{cidade}}</h1>
+    </div>
+<script>
+    var ctrlApp = function($scope){
+        $scope.nome = "Gabriel";
+        $scope.cidade = "São Paulo";
+        $scope.idade = "21";
+    };
+</script>
+</body>
+</html>
