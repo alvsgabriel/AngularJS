@@ -1,19 +1,44 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
 </head>
 <body>
-    <div ng-controller="ctrlApp">
+    <div ng-controller="ctrlInfo">
         <h1>{{nome}} - {{idade}}, {{cidade}}</h1>
     </div>
 <script>
-    var ctrlApp = function($scope){
+    // Definição do ng-app da aplicação
+    // chamando o modulo do controller
+    angular.module("myApp",[
+        'ctrlApp'
+    ]);
+
+    // Seta o modulo do controller
+    // Cria o controller
+    angular.module("ctrlApp",[])
+    .controller("ctrlInfo", ctrlInfo);
+
+    // Cria a função do controller
+    function ctrlInfo($scope){
         $scope.nome = "Gabriel";
         $scope.cidade = "São Paulo";
         $scope.idade = "21";
     };
+
+    // pra ficar de um jeito mais bonito é mais legal dessa forma a cima, que ai os elementos ficam mais legiveis e separados
+
+    // mas pode ser escrito assim também:
+    // Cria o ng-app da aplicação
+    // var app = angular.module("myApp",[]);
+
+    // Cria o controller
+        // app.controller("ctrlInfo", function($scope){
+        //     $scope.nome = "Gabriel";
+        //     $scope.cidade = "São Paulo";
+        //     $scope.idade = "21";
+        // });
 </script>
 </body>
 </html>
